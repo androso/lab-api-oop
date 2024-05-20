@@ -1,17 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const bakestudiantes = require('./rutas/estudiante');
+const bakestudiantes = require('./rutas/hogar');
 
 const app = express();
 const port = 3000;
 app.use(bodyParser.json());
 	
-app.get('/', (req, res) => {
+app.get('/', (req, res) => {	
     res.send('Welcome to my api');
 });
 
-app.use('/api/estudiante', bakestudiantes);
+app.use('/api/hogar', bakestudiantes);
 
 //conectarse a la BD
 mongoose.connect(`${process.env['MONGO_DB_URL']}`);
